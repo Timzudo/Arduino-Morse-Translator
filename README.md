@@ -1,56 +1,32 @@
-Simon is a simple electronic memory game: the user has to repeat a growing sequence of
-colors. The sequence is displayed by lighting up the LEDs. Each color also has a
-corresponding tone.
+### Arduino Morse Code Translator with LCD Display
+This project implements a Morse code translator using an Arduino, a push button, an LED, and a LiquidCrystal display. The user can input Morse code through short and long button presses, which are translated into text and displayed on the LCD. The LED provides visual feedback for button presses and resets.
 
-In each turn, the game will play the sequence, and then wait for the user to repeat
-the sequence by pressing the buttons according to the color sequence. If the user
-repeated the sequence correctly, the game will play a "leveling-up" sound, add a new
-color at the end of the sequence, and move to the next turn.
+![Demonstration](https://i.imgur.com/713IuTp.gif)
 
-The game continues until the user has made a mistake. Then a game over sound is
-played, and the game restarts.
 
-![Simon Game Shield for Arduino Uno](https://i.imgur.com/CBVsVxzh.jpg)
+### Features
+Morse Code Input: Users can enter Morse code using a single button. Short presses represent dots, and long presses represent dashes.
+Real-time Display: The translated text is displayed in real time on a 16x2 LCD.
+Feedback Mechanism: An LED flashes to indicate button presses, resets, and other status updates.
+Queue Mechanism: A queue system is implemented to eliminate erroneous inputs from static or accidental button presses.
+Reset Functionality: Users can reset the input state and clear the display with a prolonged button press.
 
-### Hardware
+### Components Used
+Arduino (e.g., Arduino Uno),
+16x2 LiquidCrystal LCD,
+Push button,
+LED (with appropriate resistor),
+Potentiometer,
+Breadboard and jumper wires
 
-| Item             | Quantity | Notes                        |
-| ---------------- | -------- | ---------------------------- |
-| Arduino Uno R3   | 1        |                              |
-| 5mm LED          | 4        | Red, Green, Blue, and Yellow |
-| 12mm Push button | 4        | Red, Green, Blue, and Yellow |
-| Resistor         | 4        | 220Ω                         |
-| Piezo Buzzer     | 1        |                              |
+### How to Use
+Wiring: Connect the LCD, button, and LED to the appropriate pins on the Arduino as defined in the code.
+Upload the Code: Load the provided code into the Arduino IDE and upload it to your Arduino board.
+Input Morse Code: Use the button to input Morse code:
+Short press: Dot (·)
+Long press: Dash (−)
+Extra long press: Reset
+View Output: The translated text will appear on the LCD screen. The LED will flash for visual feedback.
 
-<figure>
-    <img src="https://i.imgur.com/cnNS8rsh.jpg" alt="Simon hardware kit" />
-    <figcaption>
-      Hardware for the Simon game, 
-      <a href="https://www.tindie.com/products/wokwi/kit-for-simon-style-game-arduino-shield/" target="_blank">
-        kit available on Tindie
-      </a>
-    </figcaption>
-</figure>
+![Build](https://i.imgur.com/f6VLHug.png)
 
-### Diagram
-
-<figure>
-    <img src="images/diagram.png" alt="diagram" style="width: 628px" />
-    <figcaption>Simon connection diagram</figcaption>
-</figure>
-
-### Pin Connections
-
-| Arduino Pin | Device        |
-| ----------- | ------------- |
-| 12          | Red LED       |
-| 11          | Green LED     |
-| 10          | Blue LED      |
-| 9           | Yellow LED    |
-| 8           | Buzzer        |
-| 5           | Red Button    |
-| 4           | Green Button  |
-| 3           | Blue Button   |
-| 2           | Yellow Button |
-
-- The LEDs are connected through a 220Ω resistor each.
