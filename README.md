@@ -30,3 +30,6 @@ View Output: The translated text will appear on the LCD screen. The LED will fla
 
 ![Build](https://i.imgur.com/f6VLHug.png)
 
+Project in:
+https://wokwi.com/projects/413552643558363137
+
